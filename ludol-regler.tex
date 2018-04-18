@@ -1,0 +1,93 @@
+\documentclass[a4paper, 12pt, norsk]{article}
+%\usepackage{geometry}
+%Små typografiske forbendringer, litt bedre skrifttype
+\usepackage{microtype,lmodern,fix-cm}
+% Flere tegn og norske bokstaver
+%\usepackage[T1]{fontenc}
+
+\usepackage[empty]{fullpage} %Utdatert pakke, lar dokumentet løpe inn i footeren
+
+\usepackage[utf8]{inputenc} %Norske bokstaver	
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[autostyle,
+      norwegian=guillemets,
+      strict=true]{csquotes}
+
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[nameinlink]{cleveref}
+
+\usepackage{siunitx} % Må inkluderes for blant annet å få tilgang til kommandoen
+                     % \SI (korrekte måltall med enheter)
+\sisetup{output-decimal-marker  =  {,}} % Komma som desimalskilletegn (i steden for punktum).
+
+
+% Definerer en ny liste, kalt liste..
+\newlist{ludol}{enumerate}{2}
+
+% Definerer hvordan første nivå skal reffereres til
+\crefname{ludoli}{paragraf}{paragrafer}
+\Crefname{ludoli}{Paragraf}{Paragrafer}
+
+% Definerer hvordan første nivå skal nummereres
+% label er navn, og ref er navn på refferanse. 
+
+\setlist[ludol,1]{label=§-$\!$\arabic*.,ref = \arabic*}
+
+% Definerer hvprdan nivå 2 skal nummeres (sublister)
+% Merk at ref inneholder nivået over også, dermed får vi 17.8 i stedet for .8 
+\setlist[ludol,2]{label=\arabic*.,ref = \arabic{ludoli}.\arabic*}
+
+% Definerer hvordan nivå 2 skal numereres
+\crefname{ludolii}{paragraf}{paragrafer}
+\Crefname{ludolii}{Paragraf}{Paragrafer}
+
+% Måtte klemme sammen dokumentet for å få det på to sider
+% Ta vekk kommandoen for å se hva som skjer
+
+\usepackage{ifthen}
+\makeatletter%
+\@ifclassloaded{book}%
+  {\def\husregler{true}}%
+  {\def\husregler{false}}%
+\makeatother%
+
+\newcommand{\ifhandbok}[1]{\ifthenelse{\equal{\husregler}{true}}{#1}{}}
+\newcommand{\ifnothandbok}[1]{\ifthenelse{\equal{\husregler}{true}}{}{#1}}
+
+\begin{document}
+
+% Setter inn tittelen definert ovenfor
+
+\thispagestyle{empty} %Fjerner sidetall, må stå etter maketitle
+
+\vspace*{-1.65cm}
+
+\begin{center}
+  \textbf{\LARGE Ludøl-Regler} \bigskip \large
+  
+  Christian Larsen \& Geir Wagbø \\ \normalsize
+  $17$. oktober $1987$ \medskip \\
+  % 
+  \normalsize
+  Revideringer: \\ \large
+  Geir Bruskeland \& Geir Flagstad \\ \normalsize
+  $29$. september $1991$ \medskip \\
+  % 
+  \normalsize
+  Tilrettelagt for WWW av \\ \large
+  Vidar Kristiansen \\ \normalsize
+  $11$. mars $1996$ \medskip \\
+  % 
+  \normalsize
+  Oppdatert for WWW av \\ \large
+  Øistein Søvik \\ \normalsize 
+  $7$. april $2018$ \bigskip
+\end{center}
+
+
+% Begynner listen med punker/paragrafer
+\input{ludol.tex}
+
+\end{document}

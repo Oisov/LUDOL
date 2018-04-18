@@ -1,0 +1,14 @@
+\documentclass[tikz]{standalone}
+\usepackage[a0paper]{geometry}
+
+\usepackage{arev}
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\varheart}{\mathalpha}{extraup}{86}
+\DeclareMathSymbol{\vardiamond}{\mathalpha}{extraup}{87}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw (0, 0) node[inner sep=0] {\includegraphics[scale=0.6]{ludobrett}};
+    \draw (1, 1) node {Hello world};
+\end{tikzpicture}
+\end{document}
