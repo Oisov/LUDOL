@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper,norsk,openany]{book}
 \usepackage{graphicx}         % use [demo] to temporarily remove all figures
+\usepackage{caption, subcaption} % Subfigures
 \graphicspath{{./img/}} % Definerer hva som er standard mappe for bilder
 \usepackage{titlepic}
 \usepackage[mode=buildnew]{standalone}
@@ -147,8 +148,9 @@ Ludøl krever dog endel forberedelse av arrangørene, spillerne, coaches og
 dommer. Det har skjedd at spillere har blitt sendt med ambulanse til sykehuset,
 og dette er noe en for all del vil unngå. Siden dette spillet -- uheldigvis --
 ikke spilles hver uke, er denne håndboken et forsøk på en blanding av
-styringsdokument, erfaringsoverføring og råd. Dersom du bare ønsker en rask
-igjennomgang av spillets gang se \cref{sec:forstegangs-dommer}.
+styringsdokument, erfaringsoverføring og råd. Dersom du bare ønsker et raskt
+eksempel på spillets gang se \cref{sec:forstegangs-dommer}. Dokumentet er noe
+langt, så du trenger bare å lese de delene som er relevant for deg.
 
 Først følger de vanlige ludo reglene, deretter ludøl reglene i sin helhet, og
 tilslutt noen vanlige hus-regler. Dernest innformeres det om hva som kreves for
@@ -330,60 +332,65 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
 
 \begin{enumerate}
 
-  \item Svært ludobret.
+  \item \textbf{Svært ludobrett}.
 
-  \item \SI{200}{\ml} glass.
+  \item \SI{200}{\ml} \textbf{glass}.
 
-    Dette er et absoluttkrav. Spillet KAN IKKE og MÅ IKKE spilles med hverken større
-    eller mindre glass. Mindre glass gjør at spillerne ikke drikker raskt nok til å
-    vise middagen sin før det blir farlig. Mens større glass gjør det umulig å
-    fullføre glasset på 10 sekunder.
+    Dette er et absoluttkrav. Spillet KAN IKKE og MÅ IKKE spilles med hverken
+    større eller mindre glass. Mindre glass gjør at spillerne ikke drikker raskt
+    nok til å vise middagen sin før det blir farlig. Mens større glass gjør det
+    umulig å fullføre glasset på 10 sekunder.
 
-  \item Elektrikkertape eller fargede glass.
+  \item \textbf{Elektrikkertape} eller \textbf{fargede glass}.
 
-    Realfagskjelleren har lenge brukt elektrikkertape for å markere glassene. Dette er en
-    flott måte å skille glassene til hver spiller fra hverandre. Undertegnede har
-    vært dommer når det har blitt spilt med umerkede glass, og dette har vært kaos
-    uten like.
+    Realfagskjelleren har lenge brukt elektrikkertape for å markere glassene.
+    og dette er en flott måte å skille glassene til hver spiller fra hverandre.
+    Elektrikertapen fra Biltema holder ca til 16-20 glass. 
+    Undertegnede har vært dommer når det har blitt spilt med umerkede glass, og
+    dette har vært kaos uten like.
 
-    Alternativt kan en bruke fargede glass som Abakus lenge har brukt. Det viktigste
-    er at det er tydelig forskjell rød, grønn, gul og blå sine glass, samt at en
-    enkelt skal se hvor fulle glassene skal være.
+    Alternativt kan en bruke fargede glass som Abakus lenge har brukt. Det
+    viktigste er at det er tydelig forskjell rød, grønn, gul og blå sine glass,
+    samt at en enkelt skal se hvor fulle glassene skal være.
 
-  \item 4 Bøtter.
+  \item \textbf{5 Bøtter}.
 
-    Skaff en spy bøtte til hver spiller. Ikke be flere deltagere dele samme bøtte,
-    og skaff nye bøtter ved jevne mellomrom. Undertegnede har og vært med på at det
-    har vært brukt svært gamle bøtter med hull i. Ikke veldig kos når gulvet fylles
+    Skaff en spy bøtte til hver spiller. Når en spiller er ferdig å spy, får
+    spilleren resservebøtta mens coach tømmer den andre. Dette er slik at
+    spillet ikke skal stoppe for lenge opp.
+
+    Ikke be flere deltagere dele samme bøtte, og skaff nye bøtter ved jevne
+    mellomrom. Undertegnede har og vært med på at det har vært brukt svært gamle
+    bøtter med hull i. Ikke veldig kos når gulvet fylles
     med en blanding nuddler og leskende Dahls.
 
-  \item Terning.
+  \item \textbf{Terning}.
 
-    Terningen bør være stor. IKKE bruk en Yahtzee terning! Mange av reglene i Ludøl
-    dreier seg nemlig om terningen. Dersom terningen havnet utenfor bordet, dersom
-    terningen skumper borti glass slik det søles, eller dersom terningen
-    viser for mange seksere (3) på rad skal det drikkes. De to første punktene skjer
-    langt oftere med en mongostor terning. Mens det siste punktet kan fikses ved å
-    vekte terningen. F.eks en stor Gummi-terning fungerer ypperlig, den spretter ut
-    av bordet ofte.
+    Terningen bør være stor og vektet IKKE bruk en Yahtzee terning! Mange av
+    reglene i Ludøl dreier seg nemlig om terningen. Dersom terningen havnet
+    utenfor bordet, dersom terningen skumper borti glass slik det søles, eller
+    dersom terningen viser for mange seksere (3) på rad skal det drikkes. De to
+    første punktene skjer langt oftere med en mongostor terning. Mens det siste
+    punktet kan fikses ved å vekte terningen. F.eks en stor Gummi-terning
+    fungerer ypperlig, den spretter ut av bordet ofte.
 
-  \item Tusj!
+  \item \textbf{Tusj!}
 
     Spillerene SKAL skrive addressen sin på armen før spillet start. Dette er for å
     forsikre oss om at spilleren kommer seg hvem tilslutt.
 
-  \item Mikrofon
+  \item \textbf{Mikrofon}
 
     Spillet kan ofte utarte seg til kaotiske tilstander. Dersom det står 100
     mennesker i bakgrunnen og prater, kan det være umulig for spillere og ikke minst
     publikum å høre dommer. Utestemmen varer bare så lenge, så en god mikron (eller
     kanskje megafon? :p) kan komme godt med.
 
-  \item Lokalet med toalett nærme spillebordet.
+  \item Lokalet med \textbf{toalett nærme} spillebordet. Bøtter må tømmes.
 
-  \item Tørkepapir. Masse tørkepapir.
+  \item \textbf{Tørkepapir}. Masse tørkepapir.
 
-  \item Minst 4 flaskeåpnere.
+  \item \textbf{4 flaskeåpnere}+.
 
   \item 4/5 kasser Dahls.
 
@@ -392,8 +399,25 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
 
 \end{enumerate}
 
-\includegraphics[scale=0.2]{sportstape.png}
-\includegraphics[scale=0.2]{terning.jpg}
+\begin{figure}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[scale=0.2]{sportstape.png}
+        \caption{Elektrikkertape}
+        \label{fig:utstyr-terning}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.1]{terning.jpg}
+        \caption{Gummi-terning}
+        \label{fig:utstyr-terning}
+    \end{subfigure}
+    \caption{Utstyr}\label{fig:utstyr}
+\end{figure}
 
 
 \chapter{For Spiller}
@@ -606,6 +630,20 @@ glasset svært på skrå mens en heller.
 
 \epigraph{L'état c'est moi}{\textit{Fransk ludøldommer.}}
 
+\blockquote[øistein Søvik]{%
+  Første gang jeg var dommer var jeg svært nervøs, pulsen var høy og hjertet
+  dundret i ørene mine. Jeg følte at jeg hadde et ansvar for spillerenes helse
+  og velvære. Kommer de til å høre på han lille fjotten der som ikke engang
+  kunne ludo første gang han spillte? Heldigvis var spillerene og arrangørene
+  enda mer urutinerte enn meg. De spurte om det holdt med 2 bøtter, om
+  spillerene kunne spille med halvliterglass og om jeg tilfeldigvis hadde en
+  terning. Spillerene var like dårlige, de kunne hverken ludo eller ludøl, men
+  det oppstod ett kameraderi mellom dem. Det var spillerene mot dommer, og selv
+  om de visste at de ikke kunne vinne hadde de en magisk kveld. Da kunne jeg
+  endelig slappe litt av. Selv om jeg i ettertid innså at jeg kunne vært enda strengere.
+}
+
+
 Den viktigste jobben til dommer er å være en kreativ, men rettferdig kuk. Du
 skal passe på at deltagerene spyr før de får en kasse eller mer inn i blodet.
 Det farligste er en for snill dommer, for da kan deltagerene fort havne på
@@ -618,7 +656,7 @@ alkoholen som får deltagerene til å spy, men stort volum og mye kullsyre på
 liten tid. Tre glass på rad er ofte mye verre enn 6 glass fordelt jevnt over $2$
 runder. Merk at en ikke trenger å stresse for mye over at spillerene skal drikke
 konstant, en time er faktisk ganske lenge. Hold ett øye på klokka så går det
-alltid fint.
+alltid fint. Såfremt du ikke dømmer finalen i O'store. 
 
 Forkunnskapene en trenger for å stille som dommer er heldigvis enkle, du bare ha
 spilt før. Se \cref{par:forkunnskaper}, merk at selv om det skrives
@@ -697,20 +735,23 @@ terningen utenfor bordet. Dog, er det ikke like enkelt å forstå at det er
 passivt å stå i frifeltet sitt, skape blokader, eller flykte fra motspillernes
 glass. Jeg pleier gjerne å aldri gi mer enn tre straffepils per feil per tur.
 Derimot kan en gjerne få mer enn tre glass dersom en gjør flere feil iløpet av
-turen sin.
+sin tur. Alltid gi grunn for straff \textbf{før} straffen gis.
 
 Grovt sett kan en dømme en spiller overfladisk, eller basert på strategi.
 Overfladisk betyr et stort fokus på søling under drikking, stort fokus på at
 alle spillerene hele tiden teller, at det telles ned mellom hvert kast osv.
 Alternativt kan en være langt harderde på det strategiske, altså at en alltid
-skal utsette seg for mest mulig fare og spille minst mulig passiv.
+skal utsette seg for mest mulig fare og spille minst mulig passiv. Dersom spiller
+havner i en situasjon hvor alle trekk er passive, men spiller kunne ha trillt
+bedre gir jeg og straff for passivt spill.
 
 Selv er jeg langt større fan av den siste spillestilen enn den første, da jeg
 føler det ofte kan bli smålig. I tillegg blir det fort slitsomt å telle ned
 mellom hvert kast. At dommeren ``finner på'' grunner til at spillerene må drikke
 kan føles veldig urettferdig. En spiller burde aldri være uenig i hvorfor det
 ble utdelt straffepils, og dersom det skjer, kan en illegge en til for å
-kverrulere med dommer.
+kverrulere med dommer. Dog, søles det synlige mengder alkohol skal en selvsagt
+dømme for det, men 1 dråpe når en drikker føles smålig. 
 
 Dersom reglene nedtegnet ovenfor ikke fører til et høyt nok tempo er det
 \emph{viktig} at dommer avviker fra disse, jamfør \cref{par:dommer}. Under er en
@@ -786,6 +827,59 @@ Merk at skaleringen ikke skjer lineært, for eksempel dersom
 enn \faBeer\faBeer\faBeer\faBeer. Det fine er at \cref{item:oisteins-regel} kan
 innføres når som helst i spillet, da den i seg selv ikke hever tempoet spesielt mye.
 
+\chapter{O'store}
+\label{chap:O-store}
+Først en historisk anekdote. I gamle dager på Moholt fikk kjellerene lov å holde
+åpent til 03:00 to ganger i semesteret, dette var kjent som ``langåpent''. Ofte
+ble ludo-turneringen lagt på nettopp denne dagen, og var kjent som O'store.
+Derimot om ludo-turneringen var holdt uten langåpent var det kjent som O'lille.
+Det å holde langåpent var ofte lite gøy da en måtte leie inn vektere for egne
+penger, samt passe på at det maksimalt var 40 personer på hver kjeller -- hvor
+vekterene gikk rundt og tellte. Dette var spesielt problematisk under finalen,
+og sakte men sikkert døde konseptet med ludo og langåpent ut. I dag kalles
+det gjerne O'lille dersom en linje har ludøl, men turneringen kalles for
+O'store.
+
+\paragraph{Lucky Loser}
+
+Dersom det ikke er nok deltagere til å spille med 4 bord, så velges det en
+``lucky looser''. De tre som vinner kommer selvsagt med i finalen, og
+andreplassen som har drukket mest. Slik at en ikke kan taktisk sikkre seg en
+plass i finalen. Semifinalene burde spilles begynne 4-5. Mens finalen burde være
+2.5 - 3 timer senere samme kveld. 
+
+\section{Finalen}
+
+Mens kvallik ofte er artig, er finalen noe av det farligste en kan arrangere.
+Dersom en arrangerer dette på samme kveld \emph{må} en ha edru personer klare
+med bil, i tilfelle noe går galt. Coach \emph{skal} slenge inn håndkleet før
+spillerene drikker for mye og dommer \emph{må} være beinhard. Dersom dommer er
+like hard som i kvallik går det ofte rett til helvette og sykehuset. Mens
+semifinalen burde vare 1-2 timer, burde finalen maks vare 1. Dommer må være en
+kuk av dimensjoner i finalen slik at spillerene spyr opp alkoholen før det blir
+farlig. Her er noen tips for å få fortgang i spillet:
+
+\begin{enumerate}
+  \item Spillerene begynner med å ta en skål i tur og orden for hver av
+    spillerene i finalen
+    untatt seg selv. Med andre ord dersom Thilde, Elektra, Sukkerhuset og Lipton
+    er i finalen vil da først Elektra, Sukkerhuset og Lipton få 10 sec på å ta
+    en skål for Thilde. Deretter vil Thilde, Sukkerhuset, og Lipton få 10 sec på
+    å ta en skål for Elektra osv. Tilslutt kan en gjerne ta en skål for
+    dommeren eller arrangørene.
+  \item Ingen blokkader, ingen frifelt, glassene starter ute fra starten.
+    Viktig!
+  \item Pass på å være hard på passivt spill, søling osv fra starten. Spillerene
+    trenger ingen advarsler siden de allerede har spillt.
+  \item Innfør nye regler ca hvert 15-20 min. At spillerene får nytt kast dersom
+    de slår ut noen (teller som en sekser), eller to kast per spiller er ting
+    som ofte øker tempoet betraktelig. Flatrulling gitt at en drikker selv er og
+    en fin regel.
+  \item Dersom spillere har muligheten å slå ut mange glass ved å trille rett,
+    straff dem dersom de ikke klarer det.
+  \item Alt ettersom hvordan formen er kan en og vurdere å telle ned mellom
+    hvert kast. Dette er dog noe som burde informeres om ved starten av spillet.
+\end{enumerate}
 
 \chapter{Quiz}
 \label{chap:quiz}
