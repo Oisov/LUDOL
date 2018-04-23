@@ -45,7 +45,20 @@
 \usepackage{tikz}
 \usetikzlibrary{intersections,backgrounds}
 
-
+\newcounter{bordnr}
+\newcommand{\bord}[4]{%
+\begin{tikzpicture}
+\node (table) [inner sep=0pt] {
+\begin{tabular}{r|r}
+  \multicolumn{2}{c}{Bord \stepcounter{bordnr}\arabic{bordnr}} \\
+  \hline
+  #1 & #2 \\
+  #3 & #4 \\
+\end{tabular}
+};
+\draw [rounded corners=.5em] (table.north west) rectangle (table.south east);
+\end{tikzpicture}%
+}
 % \usepackage{fullpage}
 
 % Definerer en ny liste, kalt liste..
@@ -139,9 +152,9 @@
 
 \section*{Forord}
 
-Ludøl er et fantastisk spill, og hovedforfatter av dette dokumentet har spillt 2
+Ludøl er et fantastisk spill, og hovedforfatter av dette dokumentet har spilt 2
 ganger, vært coach 2 ganger, og dømt mer enn en håndfull parti. Dersom det
-igjennomføres riktig, er det en magisk opplevelse både å se på, dømme, coache
+gjennomføres riktig, er det en magisk opplevelse både å se på, dømme, coache
 og spille.  
 
 Ludøl krever dog endel forberedelse av arrangørene, spillerne, coaches og
@@ -153,10 +166,10 @@ eksempel på spillets gang se \cref{sec:forstegangs-dommer}. Dokumentet er noe
 langt, så du trenger bare å lese de delene som er relevant for deg.
 
 Først følger de vanlige ludo reglene, deretter ludøl reglene i sin helhet, og
-tilslutt noen vanlige hus-regler. Dernest innformeres det om hva som kreves for
-å arrangere spillet, også følger kapittlene til spiller, coach og dommer. Disse
+tilslutt noen vanlige hus-regler. Dernest informeres det om hva som kreves for
+å arrangere spillet, også følger kapitlene til spiller, coach og dommer. Disse
 introduseres med en kort anekdote, før det kommer råd og tips. Hvert kapitel
-avslutes med \emph{satans råd} som er humoristiske råd en absolutt ikke burde
+avsluttes med \emph{satans råd} som er humoristiske råd en absolutt ikke burde
 følge, men er alle basert på ekte hendelser.
 
 \Cref{fig:maslows-ludol} viser regel-hierarkiet en vanligvis følger i ludøl. I
@@ -173,10 +186,7 @@ pyramiden.
   \label{fig:maslows-ludol}
 \end{figure}
 
-
-
 \tableofcontents
-
 
 \mainmatter
 
@@ -192,8 +202,8 @@ En større forskjell fra Patchesi er at man ved Ludo flytter brikkene med klokka
 Dermed ble Ludo det første Pachisi-derivatet som endret den opprinnelige
 bevegelsesretningen.
 
-\section{Regler} Reglene under er de opprinnelige ludoreglene. De reglene
-som overstyres av ludølreglene er streket ut, mens reglene i kursiv er regler
+\section{Regler} Reglene under er de opprinnelige ludo-reglene. De reglene
+som overstyres av ludøl-reglene er streket ut, mens reglene i kursiv er regler
 som er overstyres av husreglene.
 
 \begin{ludo}
@@ -286,19 +296,20 @@ fritidstilbud for studenter landet rundt.
 
 Ludøl er over 30 år gammelt, og forståelig nok har reglene endret seg noe på den
 tiden. Dette kapitelet er et forsøk på å skrive i stein de reglene som det har
-blitt spilt med i praksis, men sålangt bare har vandret på folkemunne. Om noen
-år burde en nok ta en diskusjon på hvorvidt disse reglene burde være praksis,
-eller om spillets form burde returnere til mer slik det opprinnelig var tenkt å
-spilles.
+blitt spilt med i praksis, men så langt bare har vandret på folkemunne.
 
 \begin{hus}
-\item \label{sec:hus} Spillet skal kun ha èn dommer, men det anbefales på det
+\item \label{sec:hus} Spillet skal kun ha én dommer, men det anbefales på det
   sterkeste å ha en til to linjedommere.
 
 \item Coach plikter seg til å passe på sin spiller fra og med spiller setter seg
   ned ved bordet til spiller ligger hjemme i sengen sin.
 
-\item Spiller skal skrive addressen sin og telefonnummer til coach på armen.
+\item Coach skal skrive telefonnummeret sitt og adressen til spiller på armen
+  til sin spiller.
+
+  \item Coach plikter seg til å kaste inn håndkleet dersom spiller virker ute av
+    form til å fortsette. 
 
 \item \label{sec:hus-coach} Hver spiller skal ha minst en coach, og kan og
   gjerne ansette en person til å åpne og fylle opp glassene med pils (øl-ape).
@@ -316,12 +327,14 @@ spilles.
   anbefales på det sterkeste at dette gjøres ved følgende tilfeller:
     
     \begin{hus}
-    \item Ved spillestart for å feire ett meningsfyllt fritidstilbud.
+    \item Ved spillestart for å feire ett meningsfylt fritidstilbud.
+      
+    \item Når en spiller har klart å gå en runde rundt bordet.
       
     \item Når noen ser seg nødt til å offentliggjøre sin middag.
     \end{hus}
       
-  \item \label{par:hus-avsluttes} Spillet avsluttes når alle untatt èn har sett
+  \item \label{par:hus-avsluttes} Spillet avsluttes når alle unntatt én har sett
     seg nødt til å offentliggjøre sin middag tre ganger.
 \end{hus}
 
@@ -336,7 +349,7 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
 
   \item \SI{200}{\ml} \textbf{glass}.
 
-    Dette er et absoluttkrav. Spillet KAN IKKE og MÅ IKKE spilles med hverken
+    Dette er et absolutt krav. Spillet KAN IKKE og MÅ IKKE spilles med hverken
     større eller mindre glass. Mindre glass gjør at spillerne ikke drikker raskt
     nok til å vise middagen sin før det blir farlig. Mens større glass gjør det
     umulig å fullføre glasset på 10 sekunder.
@@ -345,7 +358,7 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
 
     Realfagskjelleren har lenge brukt elektrikkertape for å markere glassene.
     og dette er en flott måte å skille glassene til hver spiller fra hverandre.
-    Elektrikertapen fra Biltema holder ca til 16-20 glass. 
+    Elektrikertapen fra Biltema holder ca til 15 glass i hver farge. 
     Undertegnede har vært dommer når det har blitt spilt med umerkede glass, og
     dette har vært kaos uten like.
 
@@ -356,7 +369,7 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
   \item \textbf{5 Bøtter}.
 
     Skaff en spy bøtte til hver spiller. Når en spiller er ferdig å spy, får
-    spilleren resservebøtta mens coach tømmer den andre. Dette er slik at
+    spilleren reserve bøtta mens coach tømmer den andre. Dette er slik at
     spillet ikke skal stoppe for lenge opp.
 
     Ikke be flere deltagere dele samme bøtte, og skaff nye bøtter ved jevne
@@ -371,12 +384,12 @@ Under følger en kort liste med nødvendig utstyr før spillet settes igang.
     utenfor bordet, dersom terningen skumper borti glass slik det søles, eller
     dersom terningen viser for mange seksere (3) på rad skal det drikkes. De to
     første punktene skjer langt oftere med en mongostor terning. Mens det siste
-    punktet kan fikses ved å vekte terningen. F.eks en stor Gummi-terning
+    punktet kan fikses ved å vekte terningen. F.eks. en stor Gummi-terning
     fungerer ypperlig, den spretter ut av bordet ofte.
 
   \item \textbf{Tusj!}
 
-    Spillerene SKAL skrive addressen sin på armen før spillet start. Dette er for å
+    Spillerne SKAL skrive adressen sin på armen før spillet start. Dette er for å
     forsikre oss om at spilleren kommer seg hvem tilslutt.
 
   \item \textbf{Mikrofon}
@@ -444,15 +457,15 @@ fortelling.
   dette edle spillet, hverken jeg eller min coach hadde mye peiling på hva som
   ventet oss. Hva reglene var og hvordan en burde spille. Det ble ett hardt møte
   med virkeligheten, men det var verdt det. Jeg fikk se og føle på noe av det
-  vakreste Trondheim har å by på. Det oppstår også et kamareteri mellom
+  vakreste Trondheim har å by på. Det oppstår også et kameraderi mellom
   spillerne, vi var alle der for gjøre opp om ære og berømmelse, og bare ha en
   koselig kveld.}
 
 
 \section{Råd og tips}
 
-Det viktigste som spiller er å ansette ett godt støtteapperat rundt deg. Dette
-innvolverer en dyktig coach, en øl-ape se \cref{sec:ol-ape} og om mulig noen som
+Det viktigste som spiller er å ansette ett godt støtteapparat rundt deg. Dette
+involverer en dyktig coach, en øl-ape se \cref{sec:ol-ape} og om mulig noen som
 kan kjøre deg hjem. Det beste er å ha en coach som har sett spillet før, enda
 bedre spilt eller best ha dømt. Velg noen du kjenner godt og kan stole på passer
 på deg etter endt spill. Det anbefales å spise en solid frokost før du skal
@@ -477,17 +490,17 @@ Dersom du ønsker å vinne kan du fortsette å lese her, samt ta quizen på side
 \begin{enumerate}
     
   \item For de beste
-vinnersjangsene burde en spille en liten runde ludøl uten drikking på
+vinnersjansene burde en spille en liten runde ludøl uten drikking på
     forhånd for å virkelig lære seg ludo, samt hvordan ikke spille passivt.
     
   \item Flatrulling. Dette betyr at du legger terningen i håndflaten, og bare
     vipper den ut slik at den lander på det tallet du ønsker. Avhengig av dommer
     kan en gjøre dette mye eller lite, og det er ofte at dette straffes med
     drikking. Men dersom du ser ditt snitt til å eksempelvis slå ut tre av
-    motstanderenes glass dersom du flatruller, er det bare å kjøre på.
+    motstandernes glass dersom du flatruller, er det bare å kjøre på.
     
-  \item Minimer tapene dine. Anta at du spiller med to farger, og har trillt
-    slik at du enten kan flytte fremmover, eller slå ut ditt eget glass. Dersom
+  \item Minimer tapene dine. Anta at du spiller med to farger, og har trillet
+    slik at du enten kan flytte fremover, eller slå ut ditt eget glass. Dersom
     du slår ut ditt eget glass må du drikke, men dersom du flytter frem må du også
     drikke (passivt å ikke slå ut seg selv.). Men, her burde en virkelig ikke slå
     ut seg selv. Dersom du må drikke uansett er det bedre å flytte frem, slik
@@ -506,16 +519,16 @@ vinnersjangsene burde en spille en liten runde ludøl uten drikking på
 	\item Det er oppskrytt å kunne reglene i ludo.
     
 	\item Alltid spis en stor middag. Spis gjerne flere middager, og prøv å bland
-    mest mulig forskjellig. Nudler, tunfisk og lasagne er en klassiker. Dunsten av
+    mest mulig forskjellig. Nudler, tunfisk, egg og lasagne er en klassiker. Dunsten av
     ditt eget oppkast vil få motstanderen til å spy som en
     flodhest.$\!$\footnote{Virker ikke dette er det bare å sikte på bordet og ikke
     bøtten neste gang du spyr.}
     
-  \item Gjerne ta et vorspiel eller to før spillet, konsumer gjerne en kasse
-    her. En kan og øke alkoholtoleransen ved å være ute på whiskey-fylla dagen før.
+  \item Gjerne ta et vorspiel eller to før spillet og konsumer en hel kasse
+    der. En kan og øke alkoholtoleransen ved å være ute på whisky-fylla dagen før.
     
-  \item Jenter elsker personer som nettop har spilt ludøl, prøv gjerne å
-    sjekke opp flest mulig like etterpå.
+  \item Jenter elsker personer som nettopp har spilt ludøl, prøv gjerne å
+    sjekke opp flest mulig like etterpå. Spesielt din kvinnelige coach 
     
   \item Dommeren er den som kan minst i spillet, gjerne forklar dommeren
     hvordan ting bør dømmes. Dommeren liker en god krangel.
@@ -530,9 +543,9 @@ vinnersjangsene burde en spille en liten runde ludøl uten drikking på
     
   \item Fukt gjerne strupen med Gin eller andre drinker på siden.
     
-  \item Hver gang det telles bare drikk, det er sikkert du som har fucka opp.
+  \item Har du problemer med å spy, prøv å stikk skaftet på en stekepanne langt ned i ganen.
 
-  \item Det å dra på byen etter å ha spilt er en ypperlig idè.
+  \item Det å dra på byen etter å ha spilt er en ypperlig idé
 
   \item Dersom du av en eller annen merkelig grunn har blitt kjørt hjem i taxi,
     bare gjem deg i buskene til han har kjørt. Da kan du snike deg opp på
@@ -555,18 +568,21 @@ alminnelige ludo-regler. Se quizen bakerst på \pageref{chap:quiz}. Under er en
 kort liste med hint og tips til å være en god coach.
 
 \begin{enumerate}
+  \item Det er din oppgave å kaste inn håndkleet før spilleren blir altfor full.
+    Dersom spilleren din har blitt for full, og det er vanskelig å få i
+    spilleren vann, prøv og tell ned fra 10. 
     \item Følg LATTERLIG nøye med på spillet. Både når det er din spillers tur,
-    men også når de andre spillerene spiller. 
+    men også når de andre Spillerne spiller. 
   \item Selv om du bare ser bort fra bordet i 30 sekunder, kan det skjer
     mye som gjør at spilleren din må drikke. Det anbefales på det sterkeste å
-    ansette en øl-ape, slik at du kan utelukkende konsetrere deg om brettet. 
+    ansette en øl-ape, slik at du kan utelukkende konsentrere deg om brettet. 
   \item Følg nøye med på hvem sin tur det er. Det skjer konstant at spillere må
     drikke fordi coach glemmer hvem sin tur det er.
   \item Anta at noen har spydd, og din spiller tar en sympatipils. Da skjer det
     ofte at spiller setter ned glasset på feil felt. Derfor må du passe på hvor
     alle glassene til spilleren din står, til enhver tid. Dette kan minimeres
     ved å be spiller ALLTID drikke fra huset / båsen sin om mulig.
-  \item Hindre spilleren din fra å drikke unødvending. Det har skjedd at spiller
+  \item Hindre spilleren din fra å drikke unødvendig Det har skjedd at spiller
     A har glemt at han allerede har gjort turen sin, også gjør han turen sin
     igjen og da slår ut B. Coach til B burde da vite at A har gjort en feil, og
     hindre sin spiller B i å drikke. Dette er bare ett av mange eksempler på
@@ -581,20 +597,20 @@ kort liste med hint og tips til å være en god coach.
     I stedet betyr det å legge merke til hvilke vaner dommer har, hva dommer
     dømmer hardt på og hva han ser igjennom fingrene på. Kanskje dommer ikke
     dømmer så hardt på søling, eller kanskje han ser igjennom fingrene på
-    flatrulling dersom en spiller veldig aggresivt.
+    flatrulling dersom en spiller veldig aggressivt
   \item Noen ganger er alle trekkene du kan gjøre passive. Dette må du bare
     godta, og da velge det trekket som gjør at du i neste runde kan slå ut de
-    andre spillerene (jage).
+    andre Spillerne (jage).
 \end{enumerate}
 
 \section{Øl-ape}
 \label{sec:ol-ape}
 
 En god øl-ape søler ikke når det helles, og åpner øl i god tid før det trengs.
-Ofte er det mye kullsyre som knekker spillerene, og ved å la ølen være åpen i
+Ofte er det mye kullsyre som knekker Spillerne, og ved å la ølen være åpen i
 noen minutter minker man dette problemet noe. Tilsvarende burde en ikke spille
-med iskald pils, da dette er forferdelig å chugge. Merk at spillerene må drikke
-dersom glassene ikke er fyllt opp skikkelig. Dette betyr at du må minimere
+med iskald pils, da dette er forferdelig å chugge. Merk at Spillerne må drikke
+dersom glassene ikke er fylt opp skikkelig. Dette betyr at du må minimere
 mengde skum i glassene. Det anbefales derfor om du får lov av dommer å sette
 glasset svært på skrå mens en heller. 
 
@@ -602,8 +618,13 @@ glasset svært på skrå mens en heller.
 \section{Satans Råd}
 
 \begin{enumerate}
+  \item Dersom spilleren din har spilt kvalik dagen før O'store og deretter
+    dro på whisky-fylla, er det ikke
+    vesentlig at du har riktig telefonnummer til spilleren din. Hva er det
+    verste som kan skje, at du må spille i stedet?
+    
   \item Det er ikke nødvendig å sitte ved siden av spiller. Gjerne vandre litt
-    rundt i rommet. Spilleren klarer seg sikkert på egenhånd.
+    rundt i rommet, og kjøpt en øl fra baren. Spilleren klarer seg sikkert på egenhånd.
     
   \item Dersom spilleren din ønsker å spille med to farger, når alle andre
     spiller med en, si ja. Alt annet ville vært passivt spill.
@@ -621,7 +642,7 @@ glasset svært på skrå mens en heller.
   \item Når spilleren din ryker ut anbefales det å trille vedkommende ut i en
     trillebår.
 
-  \item Dersom spilleren din spør deg om en reglel i ludo, le høyt av vedkommende
+  \item Dersom spilleren din spør deg om en regel i ludo, le høyt av vedkommende
     og si ``vet du ikke det engang?''. Selvsagt må du ikke svare på spørsmålet.
 \end{enumerate}
 
@@ -632,29 +653,29 @@ glasset svært på skrå mens en heller.
 
 \blockquote[øistein Søvik]{%
   Første gang jeg var dommer var jeg svært nervøs, pulsen var høy og hjertet
-  dundret i ørene mine. Jeg følte at jeg hadde et ansvar for spillerenes helse
+  dundret i ørene mine. Jeg følte at jeg hadde et ansvar for spillerness helse
   og velvære. Kommer de til å høre på han lille fjotten der som ikke engang
-  kunne ludo første gang han spillte? Heldigvis var spillerene og arrangørene
+  kunne ludo første gang han spilte? Heldigvis var spillernes og arrangørene
   enda mer urutinerte enn meg. De spurte om det holdt med 2 bøtter, om
-  spillerene kunne spille med halvliterglass og om jeg tilfeldigvis hadde en
-  terning. Spillerene var like dårlige, de kunne hverken ludo eller ludøl, men
-  det oppstod ett kameraderi mellom dem. Det var spillerene mot dommer, og selv
-  om de visste at de ikke kunne vinne hadde de en magisk kveld. Da kunne jeg
-  endelig slappe litt av. Selv om jeg i ettertid innså at jeg kunne vært enda strengere.
-}
+  Spillerne kunne spille med halvliter glass og om jeg tilfeldigvis hadde en
+  terning. Spillerne var -- om mulig -- enda dårlige, de kunne hverken ludo
+  eller ludøl, men det oppstod ett kameraderi mellom dem. Det var Spillerne mot
+  dommer, og selv om de visste at de ikke kunne vinne hadde de en magisk kveld.
+  Da kunne jeg endelig slappe litt av, og selv om jeg i ettertid innså at jeg
+  kunne vært enda strengere var det en magisk kveld for meg og. }
 
 
 Den viktigste jobben til dommer er å være en kreativ, men rettferdig kuk. Du
-skal passe på at deltagerene spyr før de får en kasse eller mer inn i blodet.
-Det farligste er en for snill dommer, for da kan deltagerene fort havne på
+skal passe på at deltagerne spyr før de får en kasse eller mer inn i blodet.
+Det farligste er en for snill dommer, for da kan deltager-ene fort havne på
 sykehuset. Normal spilletid for ludøl bør ligge mellom $1$ til $2$ timer alt
-ettersom, men det er mer viktig å passe på formen til deltagerene. Dersom
-spillerene ikke virker spesielt fulle er det ikke farlig om spillet varer litt
+ettersom, men det er mer viktig å passe på formen til deltagerne Dersom
+Spillerne ikke virker spesielt fulle er det ikke farlig om spillet varer litt
 over $2$ timer, men dersom det er fare for liv og helse bør en enten
-diskvalifisere spillerene eller øke tempoet betraktelig. Merk at det ikke er
-alkoholen som får deltagerene til å spy, men stort volum og mye kullsyre på
+diskvalifisere Spillerne eller øke tempoet betraktelig. Merk at det ikke er
+alkoholen som får deltagerne til å spy, men stort volum og mye kullsyre på
 liten tid. Tre glass på rad er ofte mye verre enn 6 glass fordelt jevnt over $2$
-runder. Merk at en ikke trenger å stresse for mye over at spillerene skal drikke
+runder. Merk at en ikke trenger å stresse for mye over at Spillerne skal drikke
 konstant, en time er faktisk ganske lenge. Hold ett øye på klokka så går det
 alltid fint. Såfremt du ikke dømmer finalen i O'store. 
 
@@ -663,8 +684,8 @@ spilt før. Se \cref{par:forkunnskaper}, merk at selv om det skrives
 \emph{anbefalt} har det ikke skjedd på 10 år at noen er dommer uten og ha spilt
 ludøl før. Det anbefales og å lese over de vanlige reglene i ludo, ta quizen på
 side 4 for å sjekke hvordan det står til med forkunnskapene. Som dommer må du ha
-en sterk rettferdighetssan, kunne ta raske avgjørelser, samt ha ett godt
-overblik, men kanskje viktigst av alt du må ikke være konfliktsky.
+en sterk rettferdighetssans, kunne ta raske avgjørelser, samt ha ett godt
+overblikk, men kanskje viktigst av alt du må ikke være konfliktsky.
 
 Det å dømme er en hard jobb, og det kan tidvis føles ut som en coacher fire
 spillere samtidig. Det kan derfor anbefales på det sterkeste å ansatte to
@@ -673,28 +694,28 @@ gjort seg godt kjent med både ludo og ludøl reglene på forhånd. Det å f.eks
 delegere en linjedommer til å utelukkende følge med på passivt spill, og en
 annen til å følge med om glassene står riktig kan være lurt. 
 
-\section{Førtstegangs dommer} \label{sec:forstegangs-dommer} Dersom du skal
+\section{Førstegangs dommer} \label{sec:forstegangs-dommer} Dersom du skal
 dømme og bare ønsker å følge en enkel fremgangsmåte kan du følge kulelisten
 under. Merk at noe av sjarmen er å ha sin egen vri på dømmingen.
 %
 \begin{enumerate}
-    \item Sjekk at deltagerene har skrevet addresse på armen og at coach og
+    \item Sjekk at deltagerne har skrevet adresse på armen og at coach og
     spillere har gjort seg kjent med reglene.
     
-    \item Start med å be spillerene trille om hvem som skal starte. Høyest
-    begynner, røros-konvensjonen gjelder ikke her. Har du mulighet lar du den
+    \item Start med å be Spillerne trille om hvem som skal starte. Høyest
+    begynner, Røros-konvensjonen gjelder ikke her. Har du mulighet lar du den
     som triller høyest få bestemme farge, og dermed også
     bordplassering.\footnote{Taktisk i forhold til toalett og slikt.}
     
   \item Før spillet begynner må publikum lære å telle. Du velger da om
-    spillerene skal skal tømme 1+(1), 2+(1), 3+(1) eller 4 glass. Tallet på
+    Spillerne skal skal tømme 1+(1), 2+(1), 3+(1) eller 4 glass. Tallet på
     slutten symboliserer en rolig skål som tas tilslutt og en ikke teller på.
     Når skålen er over starter den som trillet høyest.
     
   \item Del ut straffeslurker for passivt spill over en lav sko. Dersom spillere
     ikke aktivt utsetter seg selv for maksimal fare er det passivt.
     
-  \item Etter \SI{20}{\m} be spillerene starte i startfeltet og ikke i båsen /
+  \item Etter \SI{20}{\m} be Spillerne starte i startfeltet og ikke i båsen /
     huset.
     
   \item Dersom en spiller spyr utbringer de andre en sympati-skål. Coach har
@@ -728,7 +749,7 @@ måter å gjøre dette på. Jeg pleier å gi straffepils i rekkefølgen under.
   \item Passivt spill.
 \end{enumerate}
 
-Ved brudd på regler som ikke sier seg selv, gir jeg alltid èn advarsel. Dersom
+Ved brudd på regler som ikke sier seg selv, gir jeg alltid én advarsel. Dersom
 regelen blir brutt igjen, uavhengig av hvilken spiller gis det straff. For
 eksempel er det åpenbart at en ikke skal søle edel pilsner, eller kaste
 terningen utenfor bordet. Dog, er det ikke like enkelt å forstå at det er
@@ -739,18 +760,18 @@ sin tur. Alltid gi grunn for straff \textbf{før} straffen gis.
 
 Grovt sett kan en dømme en spiller overfladisk, eller basert på strategi.
 Overfladisk betyr et stort fokus på søling under drikking, stort fokus på at
-alle spillerene hele tiden teller, at det telles ned mellom hvert kast osv.
-Alternativt kan en være langt harderde på det strategiske, altså at en alltid
+alle Spillerne hele tiden teller, at det telles ned mellom hvert kast osv.
+Alternativt kan en være langt hardere på det strategiske, altså at en alltid
 skal utsette seg for mest mulig fare og spille minst mulig passiv. Dersom spiller
-havner i en situasjon hvor alle trekk er passive, men spiller kunne ha trillt
+havner i en situasjon hvor alle trekk er passive, men spiller kunne ha trillet
 bedre gir jeg og straff for passivt spill.
 
 Selv er jeg langt større fan av den siste spillestilen enn den første, da jeg
 føler det ofte kan bli smålig. I tillegg blir det fort slitsomt å telle ned
-mellom hvert kast. At dommeren ``finner på'' grunner til at spillerene må drikke
+mellom hvert kast. At dommeren ``finner på'' grunner til at Spillerne må drikke
 kan føles veldig urettferdig. En spiller burde aldri være uenig i hvorfor det
-ble utdelt straffepils, og dersom det skjer, kan en illegge en til for å
-kverrulere med dommer. Dog, søles det synlige mengder alkohol skal en selvsagt
+ble utdelt straffepils, og dersom det skjer, kan en ilegge en til for å
+kverulere med dommer. Dog, søles det synlige mengder alkohol skal en selvsagt
 dømme for det, men 1 dråpe når en drikker føles smålig. 
 
 Dersom reglene nedtegnet ovenfor ikke fører til et høyt nok tempo er det
@@ -776,7 +797,7 @@ blokader oppheves er det ikke lengre passivt å ha 2 eller flere glass på samme
 felt også videre. Her må en vektlegge gevinsten mot tapet før en velger å endre
 på regler.
 
-\newpage
+% \newpage
 
 \section{Røros regler}
 
@@ -817,7 +838,7 @@ alle reglene samtidig, men husk \cref{par:dommer} makten er din.
   \item \faBeer \faBeer \faBeer \ Dersom det er to spillere igjen spiller disse
     nå med to farger hver.
 
-  \item \faBeer \faBeer \label{item:oisteins-regel} Glassene til spillerene
+  \item \faBeer \faBeer \label{item:oisteins-regel} Glassene til Spillerne
     starter på frifeltet og ikke i båsen sin.
 \end{enumerate}
 
@@ -831,47 +852,120 @@ innføres når som helst i spillet, da den i seg selv ikke hever tempoet spesiel
 \label{chap:O-store}
 Først en historisk anekdote. I gamle dager på Moholt fikk kjellerene lov å holde
 åpent til 03:00 to ganger i semesteret, dette var kjent som ``langåpent''. Ofte
-ble ludo-turneringen lagt på nettopp denne dagen, og var kjent som O'store.
-Derimot om ludo-turneringen var holdt uten langåpent var det kjent som O'lille.
+ble ludøl-turneringen lagt på nettopp denne dagen, og var kjent som O'store.
+Derimot om ludøl-turneringen var holdt uten langåpent var det kjent som O'lille.
 Det å holde langåpent var ofte lite gøy da en måtte leie inn vektere for egne
-penger, samt passe på at det maksimalt var 40 personer på hver kjeller -- hvor
-vekterene gikk rundt og tellte. Dette var spesielt problematisk under finalen,
-og sakte men sikkert døde konseptet med ludo og langåpent ut. I dag kalles
-det gjerne O'lille dersom en linje har ludøl, men turneringen kalles for
+penger, samt passe på at det maksimalt var 40 personer på hver kjeller -- og
+vekterne gikk selvsagt rundt og tellte. Dette var spesielt problematisk under
+finalen, og sakte men sikkert døde konseptet med ludo og langåpent ut. I dag
+kalles det gjerne O'lille dersom en linje har ludøl, men turneringen kalles for
 O'store.
+
+\paragraph{Bordplassering}
+
+Det har vært prøvd flere ganger at bordplasseringen til kvalikene under O'store
+skal være tilfeldig, men dette har vist seg å være en dårlig idè. Som regel er
+det ett bord som blir mye raskere ferdig, da flere spillere gir opp eller ryker
+ut tidlig. Under er et forslag til en mer rettferdig bordplassering basert på
+grådighets-algoritmen. Gi hver linjeforening en skåre baser på hvor dyktig
+deltager de har. Følg flytskjemaet vist i \cref{fig:ludol-live}, \emph{merk at det å
+ha vunnet kvalik før O'store bare teller dersom kvaliken er spilt samme
+semester.}
+%
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=\textwidth]{borplassering} 
+  \caption{Hvordan gi poeng til deltagerne}
+  \label{fig:borplassering}
+\end{figure}
+%
+Deretter er det bare å plassere ut spilleren med høyest skåre på bordet med
+lavest totalskåre, og gjenta denne prosessen til det ikke lengre er noen
+spillere igjen.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \bord{Indøk: 4}{Timini: 2}{Hybrida: 1}{Leonardo: 0}
+    \caption{}
+    \label{fig:utstyr-terning}
+  \end{subfigure}
+  ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+  % (or a blank line to force the subfigure onto a new line)
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \bord{Realfag: 4}{HC: 2}{Erudio: 1}{Paideia: 0}
+    \caption{}
+    \label{fig:utstyr-terning}
+  \end{subfigure}
+  
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \bord{Omega: 4}{LaBamba: 2}{Emil: 1}{Lipton: 0}
+    \caption{}
+    \label{fig:utstyr-terning}
+  \end{subfigure}
+  ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+  % (or a blank line to force the subfigure onto a new line)
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \bord{Berg: 3}{Placebo: 2}{Nabla: 2}{Elektra: 0}
+    \caption{}
+    \label{fig:utstyr-terning}
+  \end{subfigure}
+  \caption{Eksempel på bra borplassering under O'store.}
+  \label{fig:bordplassering-eksempel}
+\end{figure}
+
+Som eksempel anta at det skal spilles O'store og linjeforeningene vist i
+\cref{fig:borplassering} skal delta. Tallet bak linjeforeningene er laget fra
+\cref{fig:bordplassering-eksempel}. Først vil Bord 1-3 vil få Omega, Realfag og
+Indøk\footnote{Selvsagt har Indøk en høy skåre. De er jo så flink å svelge}, mens
+det siste bordet får Berg. Nå har Bord 4 lavest vekt, slik at de får den neste
+spilleren med høyest skåre, hvor en tenker seg at Placebo ble trukket ut
+tilfeldig blant alle andre spillere med skåre 2. Nå har Bord 1 lavest skåre, og
+får Timini. Deretter får Bord 2 HC og Bord 3 får LaBamba. Nå står Bord 4 svakest
+igjen og får Nabla som siste linjeforening. Leonardo, Paideia, Lipton og Elektra
+plasseres tilslutt tilfeldig på bord 1-4.
+
+
+
 
 \paragraph{Lucky Loser}
 
-Dersom det ikke er nok deltagere til å spille med 4 bord, så velges det en
+Dersom det ikke er nok deltagere til å spille med 4 bord, så velges det ofte en
 ``lucky looser''. De tre som vinner kommer selvsagt med i finalen, og
 andreplassen som har drukket mest. Slik at en ikke kan taktisk sikkre seg en
-plass i finalen. Semifinalene burde spilles begynne 4-5. Mens finalen burde være
-2.5 - 3 timer senere samme kveld. 
+plass i finalen.
+
 
 \section{Finalen}
 
-Mens kvallik ofte er artig, er finalen noe av det farligste en kan arrangere.
+Mens kvalik ofte er artig, er finalen noe av det farligste en kan arrangere.
 Dersom en arrangerer dette på samme kveld \emph{må} en ha edru personer klare
 med bil, i tilfelle noe går galt. Coach \emph{skal} slenge inn håndkleet før
-spillerene drikker for mye og dommer \emph{må} være beinhard. Dersom dommer er
-like hard som i kvallik går det ofte rett til helvette og sykehuset. Mens
+Spillerne drikker for mye og dommer \emph{må} være beinhard. Dersom dommer er
+like hard som i kvalik går det ofte rett til helvete og sykehuset. Mens
 semifinalen burde vare 1-2 timer, burde finalen maks vare 1. Dommer må være en
-kuk av dimensjoner i finalen slik at spillerene spyr opp alkoholen før det blir
+kuk av dimensjoner i finalen slik at Spillerne spyr opp alkoholen før det blir
 farlig. Her er noen tips for å få fortgang i spillet:
 
 \begin{enumerate}
-  \item Spillerene begynner med å ta en skål i tur og orden for hver av
-    spillerene i finalen
-    untatt seg selv. Med andre ord dersom Thilde, Elektra, Sukkerhuset og Lipton
+  \item Si ifra til coaches og øl-aper at det ikke er lov å åpne ølen for tidlig
+    for å slippe ut kullsyren. Denne trengs for at deltagerne skal klare å spy.
+  \item Spillerne begynner med å ta en skål i tur og orden for hver av
+    Spillerne i finalen
+    unntatt seg selv. Med andre ord dersom Thilde, Elektra, Sukkerhuset og Lipton
     er i finalen vil da først Elektra, Sukkerhuset og Lipton få 10 sec på å ta
     en skål for Thilde. Deretter vil Thilde, Sukkerhuset, og Lipton få 10 sec på
     å ta en skål for Elektra osv. Tilslutt kan en gjerne ta en skål for
     dommeren eller arrangørene.
-  \item Ingen blokkader, ingen frifelt, glassene starter ute fra starten.
+  \item Ingen blokkader, ingen frifelt, glassene starter ute helt fra starten.
     Viktig!
-  \item Pass på å være hard på passivt spill, søling osv fra starten. Spillerene
-    trenger ingen advarsler siden de allerede har spillt.
-  \item Innfør nye regler ca hvert 15-20 min. At spillerene får nytt kast dersom
+  \item Pass på å være hard på passivt spill, søling osv fra starten. Spillerne
+    trenger ingen advarsler siden de allerede har spilt
+  \item Innfør nye regler ca hvert 15-20 min. At Spillerne får nytt kast dersom
     de slår ut noen (teller som en sekser), eller to kast per spiller er ting
     som ofte øker tempoet betraktelig. Flatrulling gitt at en drikker selv er og
     en fin regel.
@@ -885,17 +979,17 @@ farlig. Her er noen tips for å få fortgang i spillet:
 \label{chap:quiz}
 I alle disse spørsmålene kan du anta at spillet følger ``vanlige'' ludøl
 regler, med de utvidelsene som er nedfelt i hus-reglene. Med andre ord
-eksisterer fortsatt frifelt og blokader. I alle spørsmålene untatt
+eksisterer fortsatt frifelt og blokader. I alle spørsmålene unntatt
 \cref{punkt:sperrer} er det ett alternativ som er mest riktig.  
 
 \section{Spørsmål}
 
 \begin{enumerate}
-  \item Hva er røros-konvensjonen? 
+  \item Hva er Røros-konvensjonen? 
     \begin{enumerate}
-      \item At spillerene kan flytte ut av huset når det trilles èn ener ($1$).
+      \item At Spillerne kan flytte ut av huset når det trilles én ener ($1$).
       \item At spiller kan velge å bruke toppen, eller bunnen av terningen.
-      \item At spillerene må prate med røros-dialekt.
+      \item At Spillerne må prate med Røros-dialekt.
     \end{enumerate}
   \item Anta at spiller ikke har noen glass ute, og spiller triller $5$ hva
     skjer i følge reglene? 
@@ -915,12 +1009,12 @@ eksisterer fortsatt frifelt og blokader. I alle spørsmålene untatt
   \item Anta du du spiller rød (hjerter) i \cref{fig:ludolbrett-1}. Dersom du
     triller $2$, hva er det eneste lovlige trekket du kan gjøre?
     \begin{enumerate}
-      \item Flytte null ($0$) felt fremmover og bli stående.
-      \item Flytte et ($1$) trekk rett bak blokkaden (en frem altså).
-      \item Flytte to ($2$) felt fremmover og slå ut blokkaden
-      \item Flytte to ($2$) felt fremmover og stå på samme felt som blokkaden.
+      \item Flytte null ($0$) felt fremover og bli stående.
+      \item Flytte et ($1$) trekk rett bak blokaden (en frem altså).
+      \item Flytte to ($2$) felt fremover og slå ut blokaden
+      \item Flytte to ($2$) felt fremover og stå på samme felt som blokaden
       \item Flytte fem
-        ($5$) felt fremmover og slå ut grønn [spar].
+        ($5$) felt fremover og slå ut grønn [spar].
     \end{enumerate}
   \item Anta du spiller grønn (spar) i \cref{fig:ludolbrett-1}, ranger
     terningkastene under fra minst til mest passiv
@@ -951,17 +1045,17 @@ eksisterer fortsatt frifelt og blokader. I alle spørsmålene untatt
 
 \begin{enumerate}
   \item \textbf{b)} Selv om $1$ og er riktig, følger denne fra
-    røros-konvensjonen og at en kan flytte ut dersom det trilles seks.
+    Røros-konvensjonen og at en kan flytte ut dersom det trilles seks.
   \item \textbf{c)} Dersom en ikke har noen brikker ute får man $3$ forsøk på
     å komme seg ut av huset.
   \item \textbf{b)} og \textbf{d)}. At $2$ og $4$ glass sperrer betyr at
     det ikke er mulig å flytte forbi disse glassene, eller slå dem ut.
-  \item \textbf{a)} Pressisering av forrige spørsmål, det er i utgangspunktet
+  \item \textbf{a)} Presisering av forrige spørsmål, det er i utgangspunktet
     ikke lov å flytte dersom det eksisterer en blokade foran seg.
   \item \textbf{b)}, \textbf{a)}, \textbf{c)}. Anta at en triller seks ($6$).
     Siden alle glassene står ute og det eksisterer en blokade foran, kan en ikke
     velge $(6)$ men må velge
-    $1$. En har da muligheten til enten å lage en blokkade, eller flytte til et
+    $1$. En har da muligheten til enten å lage en blokade, eller flytte til et
     tomt felt. Det å flytte en frem er passivt, men ikke like passivt som å
     skape en blokade.
 
@@ -972,13 +1066,13 @@ eksisterer fortsatt frifelt og blokader. I alle spørsmålene untatt
     ($3$) eller ($4$) på terningen. Dette er det mest passive trekket.
   \item \textbf{b)}. Uavhengig av hvilke glass gul [ruter] velger å flytte,
     er det passivt å flytte $2$. Dermed bør en flytte ett av glassene $5$
-    fremmover. La oss ta for oss hvert av alternativene.
+    frem mover. La oss ta for oss hvert av alternativene.
 
-    Dersom en flytter glasset som står i gult frifelt fem ($5$) felt fremmover
-    så flytter ut av frifeltet og en bryter opp blokkaden siden tre
+    Dersom en flytter glasset som står i gult frifelt fem ($5$) felt fremover
+    så flytter ut av frifeltet og en bryter opp blokaden siden tre
     glass ikke sperrer. Men, det er ingen andre spillere som står nærme nok til
     å kunne angripe disse tre glassene. Dette trekket er med andre ord ikke
-    spesielt aggresivt.
+    spesielt aggressivt
 
     Det er heller ingen grunn til å jage blå (kløver). Kløver har en blokade
     oppe i høyre hjørnet, og det vil være lurt å bryte opp denne før en flytter
@@ -987,7 +1081,7 @@ eksisterer fortsatt frifelt og blokader. I alle spørsmålene untatt
     (kløver) måtte en ha valgt en ($1$) på terningen neste runde for å slå ut.
     Med andre ord tjener man ett ekstrakast ved å ikke flytte frem.
 
-    Det å flytte inn i startfeltet til rød er det mest aggresive trekket en kan
+    Det å flytte inn i startfeltet til rød er det mest aggressive trekket en kan
     gjøre. Spesielt siden rød bare har en brikke ute på brettet.
   \item 
 \end{enumerate}

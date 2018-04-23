@@ -1,0 +1,18 @@
+\documentclass[border=1mm]{standalone}
+\usepackage{tikz}
+\usepackage[bf]{caption}
+
+\begin{document}
+
+\begin{tikzpicture}
+\node (table) [inner sep=0pt] {
+\begin{tabular}{r|r}
+  \multicolumn{2}{c}{Bord 1} \\
+  \hline
+  Hybrida:\phantom{-}3 &  Emil: 1 \\
+  Maskin: -1 & Janus: 0 \\
+\end{tabular}
+};
+\draw [rounded corners=.5em] (table.north west) rectangle (table.south east);
+\end{tikzpicture}
+\end{document}
